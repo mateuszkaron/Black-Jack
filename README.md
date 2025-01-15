@@ -1,3 +1,9 @@
 # Black-Jack
 Simple Black Jack class project
-![GameLook](https://github.com/numbhehe/Black-Jack/assets/147411841/14a366a1-15d5-482c-b4b0-4b9bd1e38779)
+
+
+GAME LOOK
+![blackJack](https://github.com/user-attachments/assets/09badda5-0d37-4f92-ba07-7250e7289f59)
+
+
+    
