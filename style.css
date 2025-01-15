@@ -1,0 +1,175 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #1E5128;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    border-radius: 25px;
+    border: 20px solid #1b4a25;
+    text-align: center;
+    justify-content: center;
+
+}
+
+h1{
+    color: #1b4a25;
+}
+h3{
+    color: #1b4a25; 
+}
+
+.hand{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+}
+
+button{
+    border-radius: 25px;
+    border: 10px solid #1b4a25;
+    background-color: #1E5128;
+    padding: 10px 20px 10px 20px;
+    color:#1b4a25;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+button:hover{
+    box-shadow: 0 0 10px black;
+    color: #F8F5FA;
+}
+
+.dealerHand, .playerHand{
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.card{
+    background-color: #F8F5FA; 
+    color: #2C3E50; 
+    padding: 15px 30px;
+    font-size: 3rem;
+    border-radius: 8px;
+    border: 4px solid #2C3E50;
+    margin: 10px;
+    margin-top: 0%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 9rem;
+    max-height: 12rem;
+    min-width: 4rem;
+    max-width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    animation: dropCard 1s forwards;
+}
+
+.hidden-card{
+    background-image: radial-gradient(#2C3E50, black);
+    background-size: cover;
+}
+
+.red-card {
+    color: red;
+}
+
+.black-card {
+    color: black;
+}
+
+.card::before {
+    content: attr(data-value) "\A" attr(data-suit);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: pre;
+}
+
+.card::after {
+    content: attr(data-value) "\A" attr(data-suit); 
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: pre;
+    transform: rotate(180deg);
+}
+
+@keyframes dropCard {
+    0% {
+        transform: translateX(100vw) translateY(-100vh); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;  
+    }
+}
+
+.playerHand .card {
+    animation-delay: 0.2s;
+}
+
+.dealerHand .card {
+    animation-delay: 0.5s;
+}
+
+.pop-up{
+    background-color: #1E5128;
+    border: 20px solid #1b4a25;
+    padding: 20px;
+    margin: 20px;
+    width: 40%;
+    height: 30%;
+    border-radius: 25px;
+    color: #1b4a25;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    visibility: hidden;
+    z-index: 100;
+}
+
+.pop-up h2{
+    font-size: 3rem;
+    color:#F8F5FA;
+}
+.pop-up p{
+    color: #F8F5FA;
+}
+.overlay{
+    position: fixed;  /* Przyczepia do całego ekranu */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);  /* Ciemne tło z przezroczystością */
+    display: none; 
+    z-index: 90;
+}
+
